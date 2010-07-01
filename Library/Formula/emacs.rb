@@ -18,6 +18,10 @@ class Emacs <Formula
     ]
   end
 
+  def patches
+    "http://github.com/downloads/typester/emacs/feature-fullscreen.patch" if ARGV.include?("--cocoa")
+  end
+
   def caveats
     s = ""
     if ARGV.include? "--cocoa"
