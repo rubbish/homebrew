@@ -9,7 +9,7 @@ class Sbt <Formula
   def install
     (bin+'sbt').write <<-EOS
 #!/bin/sh
-java -Xmx512M -jar #{libexec}/#{JAR} "$@"
+java -XX:MaxPermSize=256m -XX:+CMSClassUnloadingEnabled -Xss2M -Xmx1024M -jar #{libexec}/#{JAR} "$@"
 EOS
 
     libexec.install Dir['*']
