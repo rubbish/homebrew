@@ -6,9 +6,12 @@ class Clojure <Formula
   head 'git://github.com/clojure/clojure.git'
   homepage 'http://clojure.org/'
 
+  depends_on "rlwrap"
+
   def jar
     'clojure.jar'
   end
+
 
   def script
 <<-EOS
@@ -19,7 +22,7 @@ class Clojure <Formula
 # resolve links - $0 may be a softlink
 CLOJURE=$CLASSPATH:$(brew --cellar)/#{name}/#{version}/#{jar}
 
-java -cp $CLOJURE clojure.main "$@"
+rlwrap java -cp $CLOJURE clojure.main "$@"
 EOS
   end
 
