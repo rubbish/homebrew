@@ -1,7 +1,7 @@
 require 'formula'
 
 class Winetricks < ScriptFileFormula
-  url 'http://www.kegel.com/wine/winetricks', :using => :curl
+  url 'http://winezeug.googlecode.com/svn-history/r1987/trunk/winetricks', :using => :curl
   homepage 'http://wiki.winehq.org/winetricks'
   version '20101106'
 
